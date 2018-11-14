@@ -1,0 +1,87 @@
+﻿@model IEnumerable<PIDEV_MAP.Domain.entities.Request>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>REQUESTS LIST</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.requiredProfile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NbRequiredProfile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yearExperience)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Education)
+        </th>
+        <th>
+            @Html.ActionLink("DateDeposit", "Index", new { sortOrder = ViewBag.DepDateSortParm })
+
+
+        </th>
+        <th>
+
+            @Html.ActionLink("Start Date", "Index", new { sortOrder = ViewBag.DebDateSortParm })
+
+        </th>
+        <th>
+
+            @Html.ActionLink("End Date", "Index", new { sortOrder = ViewBag.EndDateSortParm })
+
+
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stateRequest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.userId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.requiredProfile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NbRequiredProfile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.yearExperience)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Education)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateDeposit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateStart_Mandat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateEnd_Mandat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stateRequest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.userId)
+        </td>
+        <td>
+            @Html.ActionLink("RESPOND", "Edit", new { id=item.RequestID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RequestID }) |
+           
+        </td>
+    </tr>
+}
+
+</table>

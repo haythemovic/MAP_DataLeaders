@@ -1,0 +1,185 @@
+﻿@model PIDEV_MAP.Domain.entities.Request
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Request</h4>
+        <hr />
+
+
+
+        <dl class="dl-horizontal" >
+            <dt>
+                @Html.DisplayNameFor(model => model.requiredProfile)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.requiredProfile)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NbRequiredProfile)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NbRequiredProfile)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.yearExperience)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.yearExperience)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Education)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Education)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DateDeposit)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DateDeposit)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DateStart_Mandat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DateStart_Mandat)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DateEnd_Mandat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DateEnd_Mandat)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.userId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.userId)
+            </dd>
+
+        </dl>
+
+
+
+
+
+
+
+
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.RequestID)
+
+        <div class="form-group" style="display:none;">
+            @Html.LabelFor(model => model.requiredProfile, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.requiredProfile, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.requiredProfile, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="display:none;">
+            @Html.LabelFor(model => model.NbRequiredProfile, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NbRequiredProfile, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NbRequiredProfile, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="display:none;">
+            @Html.LabelFor(model => model.yearExperience, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.yearExperience, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.yearExperience, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="display:none;">
+            @Html.LabelFor(model => model.Education, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Education, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Education, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="display:none;">
+            @Html.LabelFor(model => model.DateDeposit, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DateDeposit, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DateDeposit, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="display:none;">
+            @Html.LabelFor(model => model.DateStart_Mandat, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DateStart_Mandat, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DateStart_Mandat, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="display:none;">
+            @Html.LabelFor(model => model.DateEnd_Mandat, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DateEnd_Mandat, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DateEnd_Mandat, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.stateRequest, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.stateRequest, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.stateRequest, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="display:none;">
+            @Html.LabelFor(model => model.userId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.userId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.userId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" >
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

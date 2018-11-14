@@ -1,0 +1,94 @@
+﻿@model IEnumerable<PIDEV_MAP.Domain.entities.Request>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<script>
+    function afficheDiv() {
+        if (1 == 1)
+            document.getElementById("newProject").fooElement.style.display("block");
+    }
+</script>
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.requiredProfile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NbRequiredProfile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yearExperience)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Education)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateDeposit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateStart_Mandat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateEnd_Mandat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stateRequest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.userId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.requiredProfile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NbRequiredProfile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.yearExperience)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Education)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateDeposit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateStart_Mandat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateEnd_Mandat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stateRequest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.userId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RequestID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RequestID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RequestID })  |
+           
+             <div id="newProject" style="display:none;" onload="afficheDiv();">
+                      @Html.ActionLink("Create New Project", "")
+            </div>
+</td>
+    </tr>
+}
+
+</table>

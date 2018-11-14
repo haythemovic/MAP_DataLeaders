@@ -1,0 +1,90 @@
+﻿@model PIDEV_MAP.Domain.entities.Request
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Request</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.requiredProfile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.requiredProfile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NbRequiredProfile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NbRequiredProfile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.yearExperience)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yearExperience)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Education)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Education)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateDeposit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateDeposit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateStart_Mandat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateStart_Mandat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateEnd_Mandat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateEnd_Mandat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stateRequest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stateRequest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.userId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RequestID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
